@@ -42,7 +42,7 @@ rule sketch_genomes:
 rule compare_genomes:
     conda: "environment.yml"
     input:
-        expand("results/{n}.fa.gz.sig", n=[1, 2, 3, 4, 5])
+        expand("results/{n}.fa.gz.sig", n=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
     output:
         cmp = "results/all.cmp",
         labels = "results/all.cmp.labels.txt"
