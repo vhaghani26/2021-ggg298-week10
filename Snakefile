@@ -18,6 +18,7 @@ rule download_genomes:
     """
 
 rule sketch_genomes:
+    conda: "environment.yml"
     input:
         "raw_data/{name}.fa.gz"
     output:
@@ -27,6 +28,7 @@ rule sketch_genomes:
     """
 
 rule compare_genomes:
+    conda: "environment.yml"
     input:
         expand("results/{n}.fa.gz.sig", n=[1, 2, 3, 4, 5])
     output:
@@ -37,6 +39,7 @@ rule compare_genomes:
     """
 
 rule plot_genomes:
+    conda: "environment.yml"
     input:
         cmp = "results/all.cmp",
         labels = "results/all.cmp.labels.txt"
